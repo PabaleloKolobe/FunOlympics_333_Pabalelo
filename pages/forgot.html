@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+</head>
+
+    <title>Reset password</title>
+    <body>
+        <div class = "container">
+        <div class = "forms-container">
+            <div class = "signin-signup">
+                <form action = "" class = sign-in-form>
+                    <h2 class="title">Forgot Password?</h2>
+                    <p style="text-align:justify ;">Please enter your email and reset details will be sent via email</p>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="email" placeholder=" enter your email">
+                    </div>
+        
+                    <button type="button" id="btn-reset-password" class="btn solid">Reset Password</button>
+                   
+                </form>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js'></script>
+    <script>
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDQAVyuQgQhKPw_t9uz25hcDuH61rX9kQ8",
+    authDomain: "funolympics-7fb1e.firebaseapp.com",
+    databaseURL: "https://funolympics-7fb1e-default-rtdb.firebaseio.com",
+    projectId: "funolympics-7fb1e",
+    storageBucket: "funolympics-7fb1e.appspot.com",
+    messagingSenderId: "477924212531",
+    appId: "1:477924212531:web:1c79e0437782eb75c5c846",
+    measurementId: "G-PCCDS473HL"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+        $("#btn-reset-password").click(function(){
+
+            var auth = firebase.auth();
+            var email = $("#email").val();
+
+            if(email != ""){
+                
+                    auth.sendPasswordResetEmail(email).then(function(){
+                        swal("Reset email has been sent to your email check your email").then(() =>{
+                location.href='Login.html'
+                        });
+
+
+
+
+                    })
+                    .catch(function(error){
+
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+
+                        console.log(errorCode);
+                        console.log(errorMessage);
+
+                        swal("Message :" + errorMessage);
+
+
+                    });
+                
+                
+            }else{
+               window.alert("form is incomplete");
+            }
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

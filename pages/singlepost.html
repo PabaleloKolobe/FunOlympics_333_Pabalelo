@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="singlepost.css">
+    <script src="https://kit.fontawesome.com/527e856bc4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+</head>
+<body>
+
+    <header>
+    
+   
+
+        <a href="#" class="logo"> FOG <span>Games</span></a>
+        
+        <div id ="menu-bar"  class="fa-solid fa-bars"></div>
+        
+        <nav class="navbar">
+            <a href="Login.html" class="href">Register</a>
+            <a href="#features" class="href">Features</a>
+            <a href="#about-section" class="href">About</a>
+            <a href="#review" class="href">payment</a>
+            <a href="#pricing" class="href">pricing</a>
+            <a href="#contact" class="href">contact</a>
+            
+        
+        </nav>
+        </header>
+
+        <section class="singlepost">
+            <div class="container singlepost_container">
+                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, nobis iusto.</h2>
+                <div class="post_author">
+                    <div class="post_author_avatar">
+                        <img src="images/golf1.jpg" alt="">
+                    </div>
+                    <div class="post_author_info">
+                        <h5>By Pabalelo Kolobe</h5>
+                        <small>June 10 2022 - 17:25</small>
+                    </div>
+                </div>
+                <div class="singlepost_thumbnail">
+                    <img src="images/ball.jpg" alt="">
+                </div>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Culpa nulla cum iure. Explicabo inventore qui nihil tempore repellat,
+                     quaerat nobis? Aut fuga rem minus explicabo illo vel repellat quaerat autem, laboriosam 
+                     officia, excepturi rerum. Omnis accusantium enim dolorum nam odio.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Culpa nulla cum iure. Explicabo inventore qui nihil tempore repellat,
+                     quaerat nobis? Aut fuga rem minus explicabo illo vel repellat quaerat autem, laboriosam 
+                     officia, excepturi rerum. Omnis accusantium enim dolorum nam odio.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Culpa nulla cum iure. Explicabo inventore qui nihil tempore repellat,
+                     quaerat nobis? Aut fuga rem minus explicabo illo vel repellat quaerat autem, laboriosam 
+                     officia, excepturi rerum. Omnis accusantium enim dolorum nam odio.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Culpa nulla cum iure. Explicabo inventore qui nihil tempore repellat,
+                     quaerat nobis? Aut fuga rem minus explicabo illo vel repellat quaerat autem, laboriosam 
+                     officia, excepturi rerum. Omnis accusantium enim dolorum nam odio.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Culpa nulla cum iure. Explicabo inventore qui nihil tempore repellat,
+                     quaerat nobis? Aut fuga rem minus explicabo illo vel repellat quaerat autem, laboriosam 
+                     officia, excepturi rerum. Omnis accusantium enim dolorum nam odio.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Culpa nulla cum iure. Explicabo inventore qui nihil tempore repellat,
+                     quaerat nobis? Aut fuga rem minus explicabo illo vel repellat quaerat autem, laboriosam 
+                     officia, excepturi rerum. Omnis accusantium enim dolorum nam odio.
+                </p>
+            </div>
+        </section>
+        
+
+       
+
+       
+
+
+
+       
+
+        <section class="footer">
+            <div class="share">
+                <a href="http://www.facebook.com" class="fab fa-facebook-f"></a>
+                <a href="http://twitter.com" class="fab fa-twitter"></a>
+                <a href="http://instagram.com" class="fab fa-instagram"></a>
+                <a href="http://linkedin.com" class="fab fa-linkedin"></a>
+            </div>
+            <div class="column">
+                <h3>Our services</h3>
+                <li>Different streaming packages</li>
+                <li>Stream in HD</li>
+                <li>Acess from anywhere in the world</li>
+                <li>Stream in real-time</li>
+            </div>
+            <div class="column">
+                <h3>Our services</h3>
+                <li>Cancel any time</li>
+                <li>Up to devices </li>
+                <li>All devices supported</li>
+                <li>Contact us anytime</li>
+            </div>
+            
+            <div class="column">
+                <h3>Newsletter</h3>
+                <p>Get the best of our promotions and specials. Cancel anytime</p>
+                <div class="subscribe">
+                    <input type="text" placeholder="your email adress">
+                    <a href="#" class="btn">Susbcribe</a>
+                </div>
+            </div>
+        </section>
+
+</body>
+
+
+
+
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js'></script>
+<script src="javascript/contactform.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+
+var swiper = new Swiper(".image-slider", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+          rotate: 00,
+          stretch: 0,
+          depth: 100,
+          modifier: 2,
+          slideShadows: true,
+    },
+    loop:true,
+    autoplay:{
+        delay:2000,
+        disableOnInteraction:false,
+    },
+    
+});
+    let menu = document.querySelector('#menu-bar');
+    let navbar = document.querySelector('.navbar');
+
+    menu.addEventListener('click' , () =>{
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('nav-toggle')
+    });
+
+    window.onscroll = () =>{
+        menu.classList.remove('fa-times');
+        navbar.classList.remove('nav-toggle');
+
+    }
+
+</script>
+
+
+    
+
+
+
+
+
+</html>

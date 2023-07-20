@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\dashstyle.css">
+    <script src="https://kit.fontawesome.com/527e856bc4.js" crossorigin="anonymous"></script>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-clinic-medical"></i>
+                        <div class="title">FOG</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-th-large"></i>
+                        <div class="title">All accounts</div>
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href=".messages">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <div class="title">New Registrations</div>
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <div class="title">FeedBack</div>
+                    </a>
+                </li>
+                
+                
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <div class="title">Subscriptions</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gears"></i>
+                        <div class="title">Settings</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Login.html">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div class="title">Logout</div>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="top-bar">
+                <div class="search">
+                    <input type="text" name="search" placeholder="search here">
+                    <label for="search"><i class="fas fa-search"></i></label>
+                </div>
+                    <i class="fas fa-bell"> </i>
+                    <div class="user">
+                        Pabalelo
+                    </div>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">66</div>
+                        <div class="card-name">Online now</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">69</div>
+                        <div class="card-name">User interactions</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">36</div>
+                        <div class="card-name">Blocked Registrations</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">25</div>
+                        <div class="card-name">Appointments</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                </div>
+            </div>
+            
+                
+                <div class="table">
+                    <table>
+                        <h1>Contact us form</h1>
+                        <thead>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </thead>
+
+                        <tbody id="tbody1">
+                            
+                                
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js'></script>
+                <script type="module">
+                     import { getAuth } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-auth.js";
+                     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
+                    import { getDatabase , set , ref, update, onValue} from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
+
+                    const firebaseConfig = {
+  apiKey: "AIzaSyDQAVyuQgQhKPw_t9uz25hcDuH61rX9kQ8",
+  authDomain: "funolympics-7fb1e.firebaseapp.com",
+  databaseURL: "https://funolympics-7fb1e-default-rtdb.firebaseio.com",
+  projectId: "funolympics-7fb1e",
+  storageBucket: "funolympics-7fb1e.appspot.com",
+  messagingSenderId: "477924212531",
+  appId: "1:477924212531:web:1c79e0437782eb75c5c846",
+  measurementId: "G-PCCDS473HL"
+};
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            //const analytics = getAnalytics(app);
+            const database = getDatabase(app);
+            const  auth = getAuth();
+
+
+
+                        var regNO = 0;
+                        var tbody = document.getElementById('tbody1');
+                    function AddItemToTable(name, email, message){
+                        let trow = document.createElement("tr");
+                        let td1 = document.createElement('td');
+                        let td2 = document.createElement('td');
+                        let td3 = document.createElement('td');
+                        let td4 = document.createElement('td');
+
+                        td1.innerHTML =++regNO;
+                        td2.innerHTML =++name;
+                        td3.innerHTML =++email;
+                        td4.innerHTML =++message;
+
+                        trow.appendChild(td1);
+                        trow.appendChild(td2);
+                        trow.appendChild(td3);
+                        trow.appendChild(td4);
+
+                        tbody.appendChild(trow);
+
+                    }
+
+                    const db = getDatabase();
+
+                    function AddAllItemsToTable(TheRegistration){
+                        //regNO = 0;
+                        tbody.innerHTML = "";
+                        TheRegistration.forEach(element => {
+                            AddItemToTable(element.email, element.message, element.name);
+                            console.log(element.name);
+                        });
+                    }
+
+                    
+
+                    function GetAllDataOnce(){
+                        const dbRef = ref(db);
+                        get(child(dbref,"contact-form"))
+                        .then((snapshot) => {
+                            var register = [];
+
+                            snapshot.forEach(childSnapshot => {
+                                register.push(childSnapshot.val());
+                            });
+
+                            AddAllItemsToTable(register);
+                        });
+                    }
+
+                    function GetAllDataRealTime(){
+                        const dbRef = ref(db, "contact-form");
+
+                       onValue(dbRef, (snapshot) =>{
+                        var register = [];
+
+                    snapshot.forEach(childSnapshot => {
+                     register.push(childSnapshot.val());
+                    });
+
+                        AddAllItemsToTable(register);
+
+                       })
+                    }
+
+                    window.onload = GetAllDataRealTime;
+                </script>
+             
+
+            
+
+            </div>
+        </div>
+
+
+</body>
+</html>

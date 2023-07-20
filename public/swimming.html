@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="css\play.css">
+        <script src="https://kit.fontawesome.com/527e856bc4.js" crossorigin="anonymous"></script>
+       
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       
+
+
+
+    </head>
+    <body>
+
+        <nav class="navigation">
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+ 
+            <a href="index.html" class="logo">
+                FOG<span>GAMES</span>
+            </a>
+ 
+            <ul class="menu">
+                <li><a href="play.html">Home</a></li>
+                <li><a href="#">Genre</a></li>
+                <li><a href="#">Stream</a></li>
+                <li><a href="#">Fixtures</a></li>
+            </ul>
+ 
+            <form action="" class="search-box">
+                <input type="text" name="search" placeholder="Search Sport" class="search-input" required />
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+ 
+ 
+         </nav>
+
+         <section class="movie-banner">
+             
+            <div class="m-banner-img">
+                <img src="images\city2.jpg" alt="">
+            </div>
+
+
+            <div class="banner-container">
+
+                <div class="title-container">
+
+            <div class="title-top">
+
+                    
+
+                    <div class="movie-title">
+                        <h1>South Afica vs India</h1>
+                    </div>
+
+                    <div class="more-about-movie">
+                        <span class="quality">Live now in HD</span>
+                        <div class="rating">
+                            Watching 8.6K
+                        </div>
+                        <span>First leg</span>
+
+                    </div>
+         </div>
+
+         <div class="title-bottom">
+
+            <div class="category">  
+                <strong>Category</strong> <br/>
+                <a href="" class="href">Cricket</a>
+            </div>
+
+
+            <a href="#" class="watch-btn">Watch now</a>
+         </div>
+
+
+                </div>
+
+                    <div class="play-btn-container">
+                        <div class="play-btn">
+                            <a href="javascript:void">
+                                <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                <!--Full video-->
+
+                <div id="play" class="play">
+
+                    <a href="javascript:void" class="close-movie">
+                        <i class="fas fa-times"></i>
+                    </a>
+
+                    <div class="play-movie">
+                        <video id="m-video" controls>
+                            <source src="videos\swimming.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+
+
+            </div>
+
+         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(".play-btn a").click (function(){
+                $('.play').addClass('active-popup');
+            });
+
+            $(".close-movie").click (function(){
+                $('.play').removeClass('active-popup');
+            });
+
+            $(".play-btn a").click (function(){
+                $("#m-video")[0].play();
+            });
+
+            $(".close-movie").click (function(){
+                $("#m-video")[0].pause();
+            });
+
+
+
+
+        </script>
+
+    </body>
+
+
+    
+
+    </html>

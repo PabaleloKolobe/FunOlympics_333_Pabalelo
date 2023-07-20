@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "fog-games",
+    "hosting": "fog-games"
+  },
+  "targets": {}
+}
